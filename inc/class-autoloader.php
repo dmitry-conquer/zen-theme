@@ -5,7 +5,6 @@ if (!defined('ABSPATH')) {
   exit;
 }
 
-
 class Autoloader
 {
   public static function register()
@@ -15,14 +14,14 @@ class Autoloader
 
   public static function autoload($class)
   {
-    if (strpos($class, __NAMESPACE__ . '\\') !== 0)
+    if (strpos($class, __NAMESPACE__ . '\\') !== 0) {
       return;
+    }
     $class_name = str_replace(__NAMESPACE__ . '\\', '', $class);
-    $class_name = str_replace('\\', '/', $class_name);
-    $file = get_template_directory() . '/inc/' . $class_name . '.php';
+    $file_name = 'class-' . strtolower(preg_replace('/([a-z])([A-Z])/', '$1-$2', $class_name)) . '.php';
+    $file = get_template_directory() . '/inc/' . $file_name;
     if (file_exists($file)) {
       require_once $file;
     }
   }
 }
-

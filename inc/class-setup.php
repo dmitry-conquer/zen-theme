@@ -8,16 +8,16 @@ class Setup
 {
   public static function init()
   {
-    add_action('after_setup_theme', [self::class, 'refister_menus']);
+    add_action('after_setup_theme', [self::class, 'register_menus']);
     add_action('after_setup_theme', [self::class, 'setup_theme']);
     add_action('wp_enqueue_scripts', [self::class, 'remove_block_css']);
-    add_filter('upload_mimes', [self::class, 'allow_custom_mime_types']);
+    // add_filter('upload_mimes', [self::class, 'allow_custom_mime_types']);
     add_action('login_head', [self::class, 'custom_login_styles']);
     add_action('login_headerurl', [self::class, 'custom_login_logo_url']);
-    add_action('login_headertitle', [self::class, 'custom_login_logo_url_title']);
+    add_action('login_headertext', [self::class, 'custom_login_logo_url_title']);
   }
 
-  public static function refister_menus()
+  public static function register_menus()
   {
     register_nav_menus([
       'header_menu' => __('Header menu'),
@@ -38,6 +38,12 @@ class Setup
   {
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
+    add_theme_support('custom-logo', [
+      'height'      => 100,
+      'width'       => 400,
+      'flex-height' => true,
+      'flex-width'  => true,
+    ]);
   }
 
   public static function allow_custom_mime_types()
