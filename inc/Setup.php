@@ -1,12 +1,12 @@
 <?php
-namespace Theme;
+namespace ZEN_THEME;
 if (!defined('ABSPATH')) {
   exit;
 }
 
-class Setup
+final class Setup
 {
-  public static function init()
+  public static function register()
   {
     add_action('after_setup_theme', [self::class, 'register_menus']);
     add_action('after_setup_theme', [self::class, 'setup_theme']);
@@ -39,10 +39,10 @@ class Setup
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
     add_theme_support('custom-logo', [
-      'height'      => 100,
-      'width'       => 400,
+      'height' => 100,
+      'width' => 400,
       'flex-height' => true,
-      'flex-width'  => true,
+      'flex-width' => true,
     ]);
   }
 

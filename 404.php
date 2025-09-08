@@ -1,4 +1,7 @@
 <?php
-// Redirect to homepage
-wp_redirect(home_url());
-exit;
+if (!defined('ABSPATH')) {
+	exit;
+}
+
+get_template_part('template-parts/content', 'none');
+

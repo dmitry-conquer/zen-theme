@@ -1,12 +1,12 @@
 <?php
-namespace Theme;
+namespace ZEN_THEME;
 if (!defined('ABSPATH')) {
   exit;
 }
 
-class Editor
+final class Editor
 {
-  public static function init()
+  public static function register()
   {
     add_filter('tiny_mce_before_init', [self::class, 'insert_custom_formats']);
     add_filter('acf/fields/wysiwyg/toolbars', [self::class, 'acf_custom_toolbar']);

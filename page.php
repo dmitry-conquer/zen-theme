@@ -1,11 +1,7 @@
 <?php
-/**
- * Template for displaying a standard WordPress page.
- *
- * This file is used to render the content of a WordPress page using the default
- * page template. It includes the header and footer templates and displays the
- * content of the current page within a styled container.
- */
+if (!defined('ABSPATH')) {
+  exit;
+}
 ?>
 
 <?php get_header(); ?>

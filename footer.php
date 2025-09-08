@@ -1,4 +1,9 @@
-<?php get_template_part('template-parts/footer/footer-default'); ?>
+<?php
+if (!defined('ABSPATH')) {
+	exit;
+}
+?>
+<?php get_template_part('template-parts/footer', 'default'); ?>
 
 </div>
 <?php wp_footer(); ?>

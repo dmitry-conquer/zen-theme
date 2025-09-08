@@ -1,5 +1,7 @@
 <?php
 if (!defined('ABSPATH')) {
-  exit;
+	exit;
 }
+?>
 
+<p>No content found</p>

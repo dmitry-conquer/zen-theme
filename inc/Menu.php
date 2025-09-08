@@ -1,12 +1,12 @@
 <?php
-namespace Theme;
+namespace ZEN_THEME;
 if (!defined('ABSPATH')) {
   exit;
 }
 
-class Menu
+final class Menu
 {
-  public static function init()
+  public static function register()
   {
     add_filter('nav_menu_link_attributes', [self::class, 'add_custom_menu_link_class'], 10, 4);
     add_filter('nav_menu_css_class', [self::class, 'add_custom_classes_to_menu_li'], 10, 4);

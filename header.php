@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit;
+}
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -11,4 +16,4 @@
   <?php wp_body_open(); ?>
   <div class="wrapper">
 
-    <?php get_template_part('template-parts/header/header-default'); ?>
+    <?php get_template_part('template-parts/header', 'default'); ?>

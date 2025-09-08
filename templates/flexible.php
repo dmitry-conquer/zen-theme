@@ -1,4 +1,8 @@
-<?php // Template name: Flexible 
+<?php
+if (!defined('ABSPATH')) {
+	exit;
+}
+// Template name: Flexible 
 ?>
 
 <?php get_header(); ?>
