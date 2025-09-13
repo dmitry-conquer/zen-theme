@@ -1,7 +1,12 @@
 <?php
-if (!defined('ABSPATH')) {
-	exit;
-}
+/**
+ * Template part for displaying a message that posts cannot be found
+ *
+ * @package ZEN Theme
+ */
 ?>
 
-<p>No content found</p>
+<section>
+	<h1>Nothing Found</h1>
+	<p>It seems we can't find what you're looking for.</p>
+</section>

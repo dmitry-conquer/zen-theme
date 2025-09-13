@@ -1,18 +1,27 @@
 <?php
-if (!defined('ABSPATH')) {
-	exit;
-}
-?>
-<?php get_header(); ?>
+/**
+ * The template for displaying all single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package ZEN Theme
+ */
 
-<main class="single-post-page">
-  <div class="container">
-    <?php if (have_posts()):
-      while (have_posts()):
-        the_post(); ?>
-        <?php get_template_part('template-parts/content', 'single'); ?>
-      <?php endwhile; endif; ?>
-  </div>
+get_header();
+?>
+
+<main>
+
+  <?php
+  while (have_posts()):
+    the_post();
+
+    get_template_part('template-parts/content', get_post_type());
+
+  endwhile;
+  ?>
+
 </main>
 
-<?php get_footer(); ?>
+<?php
+get_footer();

@@ -1,14 +1,14 @@
 <?php
-if (!defined('ABSPATH')) {
-	exit;
-}
-// Template name: Flexible 
+/**
+ * Template Name: Flexible
+ *
+ * @package ZEN Theme
+ */
+
+get_header();
 ?>
 
-<?php get_header(); ?>
-
-
-<main>
+<main id="primary" class="site-main">
   <?php if (have_rows('content')): ?>
     <?php while (have_rows('content')):
       the_row(); ?>
